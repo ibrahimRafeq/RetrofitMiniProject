@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //اضافة تعليق جديد
 
     public String cleanPhoneNumber(String rawPhone) {
         // إزالة أي شيء غير الأرقام (0–9 أو + في البداية)
