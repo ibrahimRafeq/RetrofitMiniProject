@@ -23,7 +23,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.Manifest;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
