@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onWebSiteClicked(int position) {
                         String webSiteUrl = users.get(position).getWebsite();
 
-                        // تأكد من وجود http/https في الرابط
                         if (!webSiteUrl.startsWith("http://") && !webSiteUrl.startsWith("https://")) {
                             webSiteUrl = "http://" + webSiteUrl;
                         }
@@ -90,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         double lng = user.getAddress().getGeo().getLng();
                         String uri = "geo:" + lat + "," + lng + "?q=" + lat + "," + lng;
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                        intent.setPackage("com.google.android.apps.maps"); // للتأكد أنه يفتح Google Maps
+                        intent.setPackage("com.google.android.apps.maps");
                         startActivity(intent);
                     }
 
@@ -117,10 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public String cleanPhoneNumber(String rawPhone) {
-        // إزالة أي شيء غير الأرقام (0–9 أو + في البداية)
         rawPhone = rawPhone.trim();
-
-        // إذا كان يبدأ بـ +، احتفظ به، ثم نظف الباقي
         if (rawPhone.startsWith("+")) {
             return "+" + rawPhone.replaceAll("[^\\d]", "");
         } else {

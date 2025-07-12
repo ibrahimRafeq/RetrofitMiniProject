@@ -36,6 +36,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         MyViewHolder myViewHolder = (MyViewHolder) holder;
         Photo photo = photos.get(position);
         Picasso.get().load(photo.getUrl()).into(myViewHolder.itemPhotoBinding.photoIv);
+        myViewHolder.itemPhotoBinding.titleIvTv.setText(photo.getTitle());
     }
 
     @Override

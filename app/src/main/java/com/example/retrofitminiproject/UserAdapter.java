@@ -64,12 +64,6 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         myViewHolder.usersItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-        myViewHolder.usersItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 onItemClick.onCardClicked(position);
             }
         });
@@ -82,7 +76,6 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         UsersItemBinding usersItemBinding;
-
         public MyViewHolder(UsersItemBinding binding) {
             super(binding.getRoot());
             this.usersItemBinding = binding;
